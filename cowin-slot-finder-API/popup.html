@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Vaccine Alert</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudfare.com ">
+        <link rel="stylesheet" href="popup.css">
+        <script src="jquery.min.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <h3>Vaccine Alert System</h3>                            
+                            <div class="requires-validation">
+                                <div class="form-button mt-3" style="padding-top: 4%;padding-left: 47%;">
+                                    <button id="deleteMemory"  class="btn btn-primary">Clear Filter</button>
+                                </div>
+
+                                <div class="col-md-12 ">                                   
+                                    <input type="radio" class="btn-check" name="optradio" id="pin" value='pin' >
+                                    <label class="btn btn-sm btn-outline-secondary" for="pin">Pincode</label>
+            
+                                    <input type="radio" class="btn-check" name="optradio" id="Dist" value="Dist" checked>
+                                    <label class="btn btn-sm btn-outline-secondary" for="Dist">District</label>
+                                </div>
+        
+                                    
+                                <div class="col-md-12" id="trPin">
+                                   <input class="form-control" type="text" id="txtPincode" name="txtPincode" placeholder="Pincode" >                                   
+                                </div>
+                               <div class="col-md-12" id="trState">
+                                    <select class="form-select mt-3" id="ddlState">
+                                          
+                                   </select>
+                               </div>
+                               <div class="col-md-12" id="trDist">
+                                <select class="form-select mt-3" id="ddlDist">  
+                                    <option value="0">Select the District</option>                                    
+                               </select>
+                                </div>
+        
+                               <div class="col-md-12">
+                                <select class="form-select mt-3" id="ddlAge">  
+                                    <option value="0">Select the Age</option> 
+                                    <option value="1">0-17</option> 
+                                    <option value="18">18-44</option>
+                                    <option value="45">45+</option>                                    
+                               </select>
+                               </div>
+                               <div class="col-md-12">
+                                <select class="form-select mt-3" id="ddlSlot">  
+                                    <option value="0">Select the Dose</option> 
+                                    <option value="1">1</option> 
+                                    <option value="2">2</option>                                   
+                               </select>
+                               </div>
+                            <br/>
+                               <div class="col-md-12" >  
+                                <label >Bearer Token</label>                                 
+                                <input type="radio" class="btn-check" name="optBrr" id="brrNo" value='N' checked >
+                                <label class="btn btn-sm btn-outline-secondary" for="brrNo">No</label>        
+                                <input type="radio" class="btn-check" name="optBrr" id="brrYes" value="Y" >
+                                <label class="btn btn-sm btn-outline-secondary" for="brrYes">Yes</label>
+                            </div>
+                            <br/>
+                            <div class="col-md-12" id="trBrr">
+                                <label>Make sure you have given the correct Bearer token.</label>
+                                <textarea id="txtBrr"  name="txtBrr"  placeholder="Token"></textarea>
+                                                                   
+                             </div>
+                      
+        
+                                <div class="form-button mt-3" style="padding-top: 4%;padding-left: 47%;">
+                                    <button id="checkPage" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
