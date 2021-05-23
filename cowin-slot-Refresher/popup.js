@@ -113,7 +113,7 @@ function getAvailableCenters(dom,slot){
             playPromise.then(function(){
                 condFlag= confirm(availableCenters.toString());
                 if(!condFlag){
-                    sleep(3000).then(()=>{
+                    sleep(30000).then(()=>{
                         checkNotification();
                     });
                 }
@@ -121,7 +121,7 @@ function getAvailableCenters(dom,slot){
         }
     }
     else{
-        sleep(3000).then(()=>{
+        sleep(30000).then(()=>{
             checkNotification();
         });
     }
