@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var slot='';
     
     const sleep=(milliseconds)=>{
-        return new Promise(resolve=> setTimeout(resolve,milliseconds));
+        return new Promise(resolve=> setTimeout(resolve,milliseconds*1000));
     }
 
     Array.prototype.forEach.call(radios,function(radio){
@@ -43,11 +43,13 @@ document.addEventListener('DOMContentLoaded',function(){
                     err=true;
                 }
                
-            if($('#ddlSlot').val()=="0"){
+            if($('#ddlSlot').val()=="0" || 
+            $('#txtTimeout').val()<1 || 
+            $('#txtTimeout').val()==''  ){
                 err=true;
             }
                 value+=(','+$('#ddlSlot').val());
-           
+                value+= (','+($('#txtTimeout').val()));
             if(!err){          
             
             chrome.storage.sync.set({"cowinDOM":value},function(){
@@ -84,7 +86,7 @@ function getDOM45(){
     return document.body.innerHTML;
 }
 
-function getAvailableCenters(dom,slot){
+function getAvailableCenters(dom,slot,timeout){
     var doseAvailable= $(dom).find('.dosetotal span');
     var availableCenters=[];
     if(doseAvailable.length>0){
@@ -113,7 +115,7 @@ function getAvailableCenters(dom,slot){
             playPromise.then(function(){
                 condFlag= confirm(availableCenters.toString());
                 if(!condFlag){
-                    sleep(30000).then(()=>{
+                    sleep(timeout).then(()=>{
                         checkNotification();
                     });
                 }
@@ -121,7 +123,7 @@ function getAvailableCenters(dom,slot){
         }
     }
     else{
-        sleep(30000).then(()=>{
+        sleep(timeout).then(()=>{
             checkNotification();
         });
     }
@@ -134,7 +136,8 @@ function getAvailableCenters(dom,slot){
                  queryMode=data[0];
                 age=data[1];                
                 slot=data[2];
-                if(age>0 && queryMode !==''){
+                var timeout=data[3];
+                if(age>0 && queryMode !=='' && timeout !='' && timeout>1 ){
                   if(age=='18'){
                       chrome.tabs.executeScript({
                           code:'('+getDOM18+')();'  
@@ -142,7 +145,7 @@ function getAvailableCenters(dom,slot){
                           if(results== null){
                               checkNotification();
                           }else{
-                              getAvailableCenters(results[0],slot);
+                              getAvailableCenters(results[0],slot,timeout);
                           }
                       });
                   }
@@ -153,7 +156,7 @@ function getAvailableCenters(dom,slot){
                         if(results== null){
                             checkNotification();
                         }else{
-                            getAvailableCenters(results[0],slot);
+                            getAvailableCenters(results[0],slot,timeout);
                         }
                     });
                   }
