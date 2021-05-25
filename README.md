@@ -15,6 +15,7 @@ This extension is developed based on CoWIN Webpage DOM.
 - Complete all the required fields
 - Click on the `Save` button
 - This plugin will give alert with sound if there is any slot available.
+- For more details refer the `CoWIN_Web_Refersher.mp4` demo video.
 
 ## CoWIN Slot Finder
 

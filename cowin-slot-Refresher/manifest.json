@@ -13,7 +13,7 @@
     "pages":["popup.html"]
   },
   "permissions": [
-    "activeTab","storage","notifications","activeTab","https://www.cowin.gov.in/home","https://selfregistration.cowin.gov.in/appointment"
+    "activeTab","storage","notifications","activeTab","https://selfregistration.cowin.gov.in/appointment"
   ],
   "web_accessible_resources":[
     "note.mp3"
