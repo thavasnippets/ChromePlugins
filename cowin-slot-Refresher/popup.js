@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded',function(){
     }
 
 function getDOM18(){
+    if(document.getElementsByClassName('pin-search-btn') != null && 
+    document.getElementsByClassName('pin-search-btn').length>0){
     document.getElementsByClassName('pin-search-btn')[0].click();
+    }
     if(document.getElementById('flexRadioDefault2') != null){
         document.getElementById('flexRadioDefault2').click();
     }
@@ -76,7 +79,10 @@ function getDOM18(){
 }
 
 function getDOM45(){
+    if(document.getElementsByClassName('pin-search-btn') != null && 
+    document.getElementsByClassName('pin-search-btn').length>0){
     document.getElementsByClassName('pin-search-btn')[0].click();
+    }
     if(document.getElementById('flexRadioDefault3') != null){
         document.getElementById('flexRadioDefault3').click();
     }
