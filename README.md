@@ -19,7 +19,7 @@ This extension is developed based on CoWIN Webpage DOM.
 
 ## CoWIN Slot Finder
 
-This extension is developed based on CoWIN  OpenAPI.
+This extension is developed based on CoWIN  OpenAPI. API Reference https://apisetu.gov.in/public/marketplace/api/cowin
 
 ### Plugin Installation 
 - Start the plugin by selecting "CoWIN Slot Finder" icon in the title bar.
