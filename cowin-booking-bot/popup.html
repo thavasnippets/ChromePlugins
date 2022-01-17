@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Vaccine Alert</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudfare.com ">
+        <link rel="stylesheet" href="popup.css">
+        <script src="jquery.min.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <h3>Vaccine Alert System</h3>                            
+                            <div class="requires-validation">
+                                <div class="form-button mt-3" style="padding-top: 4%;padding-left: 47%;">
+                                    <button id="deleteMemory"  class="btn btn-primary">Clear Filter</button>
+                                </div>
+
+                                <div class="col-md-12 ">                                   
+                                    <input type="radio" class="btn-check" name="optradio" id="pin" value='.pin-search-btn' >
+                                    <label class="btn btn-sm btn-outline-secondary" for="pin">Pincode</label>
+            
+                                    <input type="radio" class="btn-check" name="optradio" id="Dist" value=".pin-search-btn .district-search">
+                                    <label class="btn btn-sm btn-outline-secondary" for="Dist">District</label>
+                                </div>
+        
+                               <div class="col-md-12">
+                                <select class="form-select mt-3" id="ddlAge">  
+                                    <option value="0">Select the Age</option> 
+                                    <option value="0">0-17</option> 
+                                    <option value="18">18-44</option>
+                                    <option value="45">45+</option>                                    
+                               </select>
+                               </div>
+                               <div class="col-md-12">
+                                <select class="form-select mt-3" id="ddlSlot">  
+                                    <option value="0">Select the Dose</option> 
+                                    <option value="Dose1">1</option> 
+                                    <option value="Dose2">2</option>                                   
+                               </select>
+                               </div>  
+                               <div class="col-md-12" >
+                                <input class="form-control" value="30" type="number" id="txtTimeout" name="txtTimeout" placeholder="Trigger time in sec's" >                                   
+                                </div>
+                                <div class="form-button mt-3" style="padding-top: 4%;padding-left: 47%;">
+                                    <button id="checkPageFrsh" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
